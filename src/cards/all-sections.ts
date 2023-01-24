@@ -19,16 +19,16 @@ export class AllSections extends LitElement {
         <div style="${this.titleStyle()}">${this.config.name}</div>
         <div style="${this.contentStyle()}">
           <div style=${this.groupsStyle()}>
-            <sonos-groups .config=${this.config} .hass=${this.hass}></sonos-groups>
+            <sonos-groups-mg .config=${this.config} .hass=${this.hass}></sonos-groups-mg>
           </div>
 
           <div style=${this.playersStyle()}>
-            <sonos-player .config=${this.config} .hass=${this.hass}></sonos-player>
-            <sonos-grouping .config=${this.config} .hass=${this.hass}></sonos-grouping>
+            <sonos-player-mg .config=${this.config} .hass=${this.hass}></sonos-player-mg>
+            <sonos-grouping-mg .config=${this.config} .hass=${this.hass}></sonos-grouping-mg>
           </div>
 
           <div style=${this.mediaBrowserStyle()}>
-            <sonos-media-browser .config=${this.config} .hass=${this.hass}></sonos-media-browser>
+            <sonos-media-browser-mg .config=${this.config} .hass=${this.hass}></sonos-media-browser-mg>
           </div>
         </div>
       </ha-card>
@@ -38,14 +38,14 @@ export class AllSections extends LitElement {
   private renderDeprecatedSingleSectionMode() {
     switch (this.config.singleSectionMode) {
       case Section.GROUPING:
-        return html` <sonos-grouping .config=${this.config} .hass=${this.hass}></sonos-grouping> `;
+        return html` <sonos-grouping-mg .config=${this.config} .hass=${this.hass}></sonos-grouping-mg> `;
       case Section.GROUPS:
-        return html` <sonos-groups .config=${this.config} .hass=${this.hass}></sonos-groups> `;
+        return html` <sonos-groups-mg .config=${this.config} .hass=${this.hass}></sonos-groups-mg> `;
       case Section.MEDIA_BROWSER:
-        return html` <sonos-media-browser .config=${this.config} .hass=${this.hass}></sonos-media-browser> `;
+        return html` <sonos-media-browser-mg .config=${this.config} .hass=${this.hass}></sonos-media-browser-mg> `;
       case Section.PLAYER:
       default:
-        return html` <sonos-player .config=${this.config} .hass=${this.hass}></sonos-player> `;
+        return html` <sonos-player-mg .config=${this.config} .hass=${this.hass}></sonos-player-mg> `;
     }
   }
 
