@@ -1,5 +1,5 @@
 {
-    "name": "Sonos Card",
+    "name": "Sonos Card (MG)",
     "render_readme": true,
-    "filename": "custom-sonos-card.js"
+    "filename": "custom-sonos-card-nesthub.js"
 }
