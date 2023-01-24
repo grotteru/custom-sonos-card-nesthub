@@ -14,7 +14,7 @@ jobs:
       # Build
       - name: Build the file
         run: |
-          cd /home/runner/work/boilerplate-card/boilerplate-card
+          cd /home/runner/work/custom-sonos-card/custom-sonos-card
           npm install
           npm run build
       # Upload build file to the releas as an asset.
