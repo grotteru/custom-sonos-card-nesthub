@@ -34,7 +34,7 @@ export default [
     input: 'src/main.ts',
     output: {
       format: 'es',
-      file: 'dist/custom-sonos-card.js',
+      file: 'dist/custom-sonos-card-nesthub.js',
     },
     plugins: [...plugins],
   },
