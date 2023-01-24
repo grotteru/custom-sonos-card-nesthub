@@ -49,7 +49,7 @@ jobs:
       # Build
       - name: Build the file
         run: |
-          cd /home/runner/work/custom-sonos-card/custom-sonos-card
+          cd /home/runner/work/custom-sonos-card-nesthub/custom-sonos-card-nesthub
           npm install
           npm run build
 
@@ -58,7 +58,7 @@ jobs:
 
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/custom-sonos-card/custom-sonos-card/dist/custom-sonos-card.js
-          asset_name: custom-sonos-card.js
+          file: /home/runner/work/custom-sonos-card-nesthub/custom-sonos-card-nesthub/dist/custom-sonos-card-nesthub.js
+          asset_name: custom-sonos-card-nesthub.js
           tag: ${{ github.ref }}
           overwrite: true
