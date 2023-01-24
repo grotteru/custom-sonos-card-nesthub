@@ -25,16 +25,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Release
-        uses: actions/create-release@v1
+#       - name: Create Release
+#         uses: actions/create-release@v1
+#         with:
+#           tag_name: ${{ github.ref }}
+#           release_name: ${{ github.ref }}
+#           body: ${{steps.build_changelog.outputs.changelog}}
+#           prerelease: true
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Github Release
+        uses: ncipollo/release-action@v1
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
           body: ${{steps.build_changelog.outputs.changelog}}
           prerelease: true
+          allowUpdates: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          
       # Build
       - name: Build the file
         run: |
