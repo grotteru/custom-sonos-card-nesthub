@@ -85,7 +85,7 @@ export class Player extends LitElement {
   }
 
   private containerStyle(entity: HassEntity) {
-    const entityImage = 'http://192.168.0.59:8123' + entity.attributes.entity_picture;
+    const entityImage = this.config.prefixPicture + entity.attributes.entity_picture;
     const mediaTitle = entity.attributes.media_title;
     const mediaContentId = entity.attributes.media_content_id;
     let style: StyleInfo = {
